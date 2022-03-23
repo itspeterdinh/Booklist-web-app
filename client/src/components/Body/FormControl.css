@@ -1,0 +1,11 @@
+.formControl {
+  max-width: 150rem;
+  height: 80px;
+  /* width: 97%; */
+  margin: 0 auto;
+  display: flex;
+  background: transparent;
+  margin-top: -6rem;
+  align-items: center;
+  justify-content: space-between;
+}

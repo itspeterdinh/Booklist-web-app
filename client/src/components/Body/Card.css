@@ -1,0 +1,110 @@
+.card {
+  display: grid;
+  width: 220px;
+  grid-template-columns: 220px;
+  grid-template-rows: 180px 140px 60px;
+  grid-template-areas: 'image' 'text' 'stats';
+  border-radius: 17px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.card__image-background {
+  grid-area: image;
+  background: url('./../../../public/images/background.jpg');
+  opacity: 50%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 10.5rem;
+}
+
+.card__image {
+  grid-area: image;
+  background: transparent;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 10.5rem;
+  z-index: 1;
+  justify-content: center;
+  justify-items: center;
+}
+
+.card__image-img {
+  /*  -o-object-fit: cover;*/
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.card__detail {
+  grid-area: text;
+}
+
+.date {
+  color: rgb(211, 72, 192);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.card__title {
+  font-size: 1.4rem;
+  color: rgb(27, 26, 26);
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.card__author {
+  font-size: 1.2rem;
+  color: rgb(87, 81, 81);
+  font-weight: 300;
+  margin-left: 5px;
+}
+
+.card__type {
+  font-size: 1rem;
+  color: rgb(87, 81, 81);
+  font-weight: 100;
+  margin-left: 5px;
+}
+
+.card__stats {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: rgb(70, 70, 218);
+}
+
+.card__stats .stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  color: white;
+}
+
+.card__stats .type {
+  font-size: 11px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.card__stats .value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.card__stats .border {
+  border-left: 1px solid rgb(47, 47, 145);
+  border-right: 1px solid rgb(47, 47, 145);
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
