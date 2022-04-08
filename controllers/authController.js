@@ -34,6 +34,13 @@ const createSendToken = (user, statusCode, req, res) => {
 };
 
 exports.signup = catchAsync(async (req, res, next) => {
+  const { email } = req.body;
+  const user = await User.findOne({ email });
+
+  if (user) {
+    return next(new AppError('Your email has been already registered', 400));
+  }
+
   const newUser = await User.create(req.body);
   createSendToken(newUser, 201, req, res);
 });

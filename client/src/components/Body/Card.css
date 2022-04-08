@@ -13,7 +13,7 @@
 
 .card__image-background {
   grid-area: image;
-  background: url('./../../../public/images/background.jpg');
+  background: url('./../../../public/img/background.jpg');
   opacity: 50%;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -105,6 +105,6 @@
 }
 
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(104%);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
 }
