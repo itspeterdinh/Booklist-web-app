@@ -1,193 +1,218 @@
-[{
-  "_id": {
-    "$oid": "621f34d6c238400b88f5b52a"
+[
+  {
+    "_id": {
+      "$oid": "621f34d6c238400b88f5b52a"
+    },
+    "locations": {
+      "type": "Point",
+      "coordinates": []
+    },
+    "createAt": {
+      "$date": "2022-03-02T09:11:32.270Z"
+    },
+    "name": "Calculus 1",
+    "author": "James Stewart",
+    "type": "Paperback",
+    "category": "selling",
+    "slug": "calculus-1",
+    "__v": 0
   },
-  "locations": {
-    "type": "Point",
-    "coordinates": []
+  {
+    "_id": {
+      "$oid": "621f34e6c238400b88f5b52b"
+    },
+    "locations": {
+      "type": "Point",
+      "coordinates": []
+    },
+    "createAt": {
+      "$date": "2022-03-02T09:11:32.270Z"
+    },
+    "name": "Experimental Design",
+    "author": "Roger Kirk",
+    "type": "Hardcover",
+    "category": "selling",
+    "slug": "experimental-design",
+    "__v": 0
   },
-  "createAt": {
-    "$date": "2022-03-02T09:11:32.270Z"
+  {
+    "_id": {
+      "$oid": "621f34f1c238400b88f5b52c"
+    },
+    "locations": {
+      "type": "Point",
+      "coordinates": []
+    },
+    "createAt": {
+      "$date": "2022-03-02T09:11:32.270Z"
+    },
+    "name": "Econometric Analysis",
+    "author": "William Greene",
+    "type": "Hardcover",
+    "category": "renting",
+    "slug": "econometric-analysis",
+    "__v": 0
   },
-  "name": "Calculus 1",
-  "author": "James Stewart",
-  "type": "Paperback",
-  "slug": "calculus-1",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "621f34e6c238400b88f5b52b"
+  {
+    "_id": {
+      "$oid": "621f3501c238400b88f5b52d"
+    },
+    "locations": {
+      "type": "Point",
+      "coordinates": []
+    },
+    "createAt": {
+      "$date": "2022-03-02T09:11:32.270Z"
+    },
+    "name": "Modeling Longitudinal Data",
+    "author": "Robert Weiss",
+    "type": "Paperback",
+    "category": "selling",
+    "slug": "modeling-longitudinal-data",
+    "__v": 0
   },
-  "locations": {
-    "type": "Point",
-    "coordinates": []
+  {
+    "_id": {
+      "$oid": "621f3518c238400b88f5b52f"
+    },
+    "locations": {
+      "type": "Point",
+      "coordinates": []
+    },
+    "createAt": {
+      "$date": "2022-03-02T09:11:32.270Z"
+    },
+    "name": "Regression Analysis by Example",
+    "author": "Samprit Chatterjee",
+    "type": "Loose-leaf",
+    "category": "selling",
+    "slug": "regression-analysis-by-example",
+    "__v": 0
   },
-  "createAt": {
-    "$date": "2022-03-02T09:11:32.270Z"
+  {
+    "_id": {
+      "$oid": "621f3524c238400b88f5b530"
+    },
+    "locations": {
+      "type": "Point",
+      "coordinates": []
+    },
+    "createAt": {
+      "$date": "2022-03-02T09:11:32.270Z"
+    },
+    "name": "Sampling: Design and Analysis",
+    "author": "Sharon L. Lohr",
+    "type": "Hardcover",
+    "category": "selling",
+    "slug": "sampling:-design-and-analysis",
+    "__v": 0
   },
-  "name": "Experimental Design",
-  "author": "Roger Kirk",
-  "type": "Hardcover",
-  "slug": "experimental-design",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "621f34f1c238400b88f5b52c"
+  {
+    "_id": {
+      "$oid": "621f352ec238400b88f5b531"
+    },
+    "locations": {
+      "type": "Point",
+      "coordinates": []
+    },
+    "createAt": {
+      "$date": "2022-03-02T09:11:32.270Z"
+    },
+    "name": "Latent Class Scaling Analysis",
+    "author": "C. Mitchell Dayton",
+    "type": "Loose-leaf",
+    "category": "selling",
+    "slug": "latent-class-scaling-analysis",
+    "__v": 0
   },
-  "locations": {
-    "type": "Point",
-    "coordinates": []
+  {
+    "_id": {
+      "$oid": "621f3534c238400b88f5b532"
+    },
+    "locations": {
+      "type": "Point",
+      "coordinates": []
+    },
+    "createAt": {
+      "$date": "2022-03-02T09:11:32.270Z"
+    },
+    "name": "Applied Latent Class Analysis",
+    "author": "Allan L. McCutcheon",
+    "type": "Paperback",
+    "category": "exchange",
+    "slug": "applied-latent-class-analysis",
+    "__v": 0
   },
-  "createAt": {
-    "$date": "2022-03-02T09:11:32.270Z"
+  {
+    "_id": {
+      "$oid": "621f353ac238400b88f5b533"
+    },
+    "locations": {
+      "type": "Point",
+      "coordinates": []
+    },
+    "createAt": {
+      "$date": "2022-03-02T09:11:32.270Z"
+    },
+    "name": "Latent Class Analysis",
+    "author": "Allan L. McCutcheon",
+    "type": "Loose-leaf",
+    "category": "selling",
+    "slug": "latent-class-analysis",
+    "__v": 0
   },
-  "name": "Econometric Analysis",
-  "author": "William Greene",
-  "type": "Hardcover",
-  "slug": "econometric-analysis",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "621f3501c238400b88f5b52d"
+  {
+    "_id": {
+      "$oid": "621f3600c238400b88f5b534"
+    },
+    "locations": {
+      "type": "Point",
+      "coordinates": []
+    },
+    "createAt": {
+      "$date": "2022-03-02T09:11:32.270Z"
+    },
+    "name": "Northanger Abbey",
+    "author": "Jane Austen",
+    "type": "Hardcover",
+    "category": "renting",
+    "slug": "northanger-abbey",
+    "__v": 0
   },
-  "locations": {
-    "type": "Point",
-    "coordinates": []
+  {
+    "_id": {
+      "$oid": "621f3607c238400b88f5b535"
+    },
+    "locations": {
+      "type": "Point",
+      "coordinates": []
+    },
+    "createAt": {
+      "$date": "2022-03-02T09:11:32.270Z"
+    },
+    "name": "War and Peace",
+    "author": "Leo Tolstoy",
+    "type": "Hardcover",
+    "category": "exchange",
+    "slug": "war-and-peace",
+    "__v": 0
   },
-  "createAt": {
-    "$date": "2022-03-02T09:11:32.270Z"
-  },
-  "name": "Modeling Longitudinal Data",
-  "author": "Robert Weiss",
-  "type": "Paperback",
-  "slug": "modeling-longitudinal-data",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "621f3518c238400b88f5b52f"
-  },
-  "locations": {
-    "type": "Point",
-    "coordinates": []
-  },
-  "createAt": {
-    "$date": "2022-03-02T09:11:32.270Z"
-  },
-  "name": "Regression Analysis by Example",
-  "author": "Samprit Chatterjee",
-  "type": "Loose-leaf",
-  "slug": "regression-analysis-by-example",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "621f3524c238400b88f5b530"
-  },
-  "locations": {
-    "type": "Point",
-    "coordinates": []
-  },
-  "createAt": {
-    "$date": "2022-03-02T09:11:32.270Z"
-  },
-  "name": "Sampling: Design and Analysis",
-  "author": "Sharon L. Lohr",
-  "type": "Hardcover",
-  "slug": "sampling:-design-and-analysis",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "621f352ec238400b88f5b531"
-  },
-  "locations": {
-    "type": "Point",
-    "coordinates": []
-  },
-  "createAt": {
-    "$date": "2022-03-02T09:11:32.270Z"
-  },
-  "name": "Latent Class Scaling Analysis",
-  "author": "C. Mitchell Dayton",
-  "type": "Loose-leaf",
-  "slug": "latent-class-scaling-analysis",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "621f3534c238400b88f5b532"
-  },
-  "locations": {
-    "type": "Point",
-    "coordinates": []
-  },
-  "createAt": {
-    "$date": "2022-03-02T09:11:32.270Z"
-  },
-  "name": "Applied Latent Class Analysis",
-  "author": "Allan L. McCutcheon",
-  "type": "Paperback",
-  "slug": "applied-latent-class-analysis",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "621f353ac238400b88f5b533"
-  },
-  "locations": {
-    "type": "Point",
-    "coordinates": []
-  },
-  "createAt": {
-    "$date": "2022-03-02T09:11:32.270Z"
-  },
-  "name": "Latent Class Analysis",
-  "author": "Allan L. McCutcheon",
-  "type": "Loose-leaf",
-  "slug": "latent-class-analysis",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "621f3600c238400b88f5b534"
-  },
-  "locations": {
-    "type": "Point",
-    "coordinates": []
-  },
-  "createAt": {
-    "$date": "2022-03-02T09:11:32.270Z"
-  },
-  "name": "Northanger Abbey",
-  "author": "Jane Austen",
-  "type": "Hardcover",
-  "slug": "northanger-abbey",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "621f3607c238400b88f5b535"
-  },
-  "locations": {
-    "type": "Point",
-    "coordinates": []
-  },
-  "createAt": {
-    "$date": "2022-03-02T09:11:32.270Z"
-  },
-  "name": "War and Peace",
-  "author": "Leo Tolstoy",
-  "type": "Hardcover",
-  "slug": "war-and-peace",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "621f3633c238400b88f5b537"
-  },
-  "locations": {
-    "type": "Point",
-    "coordinates": []
-  },
-  "createAt": {
-    "$date": "2022-03-02T09:11:32.270Z"
-  },
-  "name": "Anna Karenina",
-  "author": "Leo Tolstoy",
-  "type": "Hardcover",
-  "slug": "anna-karenina",
-  "__v": 0
-}]
+  {
+    "_id": {
+      "$oid": "621f3633c238400b88f5b537"
+    },
+    "locations": {
+      "type": "Point",
+      "coordinates": []
+    },
+    "createAt": {
+      "$date": "2022-03-02T09:11:32.270Z"
+    },
+    "name": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "type": "Hardcover",
+    "category": "renting",
+    "slug": "anna-karenina",
+    "__v": 0
+  }
+]
