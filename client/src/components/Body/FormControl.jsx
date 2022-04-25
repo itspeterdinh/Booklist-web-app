@@ -3,12 +3,12 @@ import Select from "./Select";
 import Search from "./Search";
 
 import "./FormControl.css";
-const FormControl = () => {
+const FormControl = (props) => {
   return (
     <>
       <div className="formControl">
         <Search />
-        <Select />
+        <Select category={props.category} setCategory={props.setCategory}/>
       </div>
     </>
   );

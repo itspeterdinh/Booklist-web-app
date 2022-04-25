@@ -28,6 +28,13 @@ const itemSchema = new mongoose.Schema({
     default: Date.now()
   },
   price: Number,
+  category: {
+    type: String,
+    required: true,
+    enum: {
+      values: ['selling', 'renting', 'exchange']
+    }
+  },
   images: String,
   locations: {
     type: {

@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import { login, signup } from '../../apis/authAPIs';
+import Badges from './Badges';
 
 import "./Login.css";
 
@@ -38,17 +39,7 @@ function Login() {
         <div className="form-container sign-in-container">
           <form onSubmit={handleLogin}>
             <h1>Sign In</h1>
-            <div className="social-container">
-              <a href="#" className="social">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" className="social">
-                <i className="fab fa-google-plus-g"></i>
-              </a>
-              <a href="#" className="social">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-            </div>
+            <Badges />
             <span>or use your account</span>
             <input 
               type="text" 
@@ -76,17 +67,7 @@ function Login() {
         <div className="form-container sign-up-container">
           <form onSubmit={handleSignup}>
             <h1>Create Account</h1>
-            <div className="social-container">
-              <a href="#" className="social">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" className="social">
-                <i className="fab fa-google-plus-g"></i>
-              </a>
-              <a href="#" className="social">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-            </div>
+            <Badges />
             <span>or use your email for registration</span>
             <input
               type="text" 
