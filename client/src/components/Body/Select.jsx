@@ -6,9 +6,9 @@ const Select = (props) => {
     <>
       <select className="select" value={props.category} 
         onChange={(e) => props.setCategory(e.target.value)}>
-        <option value="selling">Selling</option>
-        <option value="renting">Renting</option>
-        <option value="exchange">Exchange</option>
+        <option value="math">Math</option>
+        <option value="physics">Physics</option>
+        <option value="chemistry">Chemistry</option>
       </select>
     </>
   );

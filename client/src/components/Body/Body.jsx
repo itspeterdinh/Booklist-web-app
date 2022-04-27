@@ -9,7 +9,7 @@ import './Body.css';
 const Body = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [category, setCategory] = useState("selling");
+  const [category, setCategory] = useState("math");
 
   const fetchData = async () => {
     try {

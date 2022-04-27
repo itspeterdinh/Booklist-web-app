@@ -1,11 +1,10 @@
-.card-container {
+/* .card-container {
   max-width: 150rem;
   margin: 0 auto;
   margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   align-content: space-around;
-  /* grid-template-columns: repeat(6, 1fr); */
   grid-gap: 3rem;
   background: white;
   justify-content: center;
@@ -21,8 +20,10 @@
 }
 
 .picture-img {
-  /*  -o-object-fit: cover;*/
   object-fit: contain;
   height: 100%;
   width: 100%;
+} */
+.cards-container {
+  text-align: center;
 }
