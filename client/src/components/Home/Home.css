@@ -1,9 +1,15 @@
 .add-btn {
-    background: linear-gradient(0.25turn, #229ace, #5879d4, #2c18e4);
-    
+  background: linear-gradient(0.25turn, #229ace, #5879d4, #2c18e4);
 }
 
 .card-container {
-    text-align: center;
-    border-radius: 30px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.img-desc {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

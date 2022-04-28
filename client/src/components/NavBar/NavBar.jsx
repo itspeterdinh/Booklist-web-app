@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 //import React, { Component } from "react";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from 'react';
 // import { MenuItems } from "./MenuItems";
-import { Button } from "./Button";
-import { Link } from "react-router-dom";
+import { Button } from './Button';
+import { Link } from 'react-router-dom';
 import { logout } from '../../apis/authAPIs';
-import "./NavBar.css";
+import './NavBar.css';
 
 const NavBar = () => {
   const [state, setState] = useState(false);
@@ -15,9 +15,9 @@ const NavBar = () => {
   const handleClick = () => {
     setState(!state);
   };
-  
-  useEffect (() => {
-    const loggedInUser = window.localStorage.getItem("user");
+
+  useEffect(() => {
+    const loggedInUser = window.localStorage.getItem('user');
     if (loggedInUser) {
       setUser(JSON.parse(loggedInUser));
     }
@@ -26,17 +26,19 @@ const NavBar = () => {
   const handleLogout = () => {
     logout();
     window.localStorage.clear();
-  }
+  };
 
   return (
     <>
       <nav className="NavbarItems">
-        <Link to="/">
-          <h1 className="navbar-logo">
-            ACKBooks <i class="fa-solid fa-bookmark"></i>
-          </h1>
-        </Link>
-        <div className="menu-icon" onClick={handleClick}>
+        <div>
+          <Link to="/">
+            <h1 className="navbar-logo">
+              ACKBooks <i className="fa-solid fa-bookmark"></i>
+            </h1>
+          </Link>
+        </div>
+        {/* <div className="menu-icon" onClick={handleClick}>
           <i className={state ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
         {user ? (
@@ -47,14 +49,19 @@ const NavBar = () => {
               <span>{user.name.split(' ')[0]}</span>
             </a>
           </nav>
-        ) : (
-          <>
-            <Link to="/signup">
-              <Button>Sign in</Button>
-            </Link>
-          </>
-        )}
+        ) : ( */}
+        <div>
+          <Link to="/signup">
+            <Button>Sign in</Button>
+          </Link>
+          <Link  to="/checkout">
+            <i className="fa-solid fa-cart-shopping cart"></i>
+          </Link>
+        </div>
+
+        {/* // )
         
+        // } */}
       </nav>
     </>
   );

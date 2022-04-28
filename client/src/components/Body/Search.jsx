@@ -4,7 +4,7 @@ import "./Search.css";
 const Search = () => {
   return (
     <>
-      <form>
+      <form className="search-form">
         <input type="search" placeholder="Search..."></input>
         <button type="submit">Search</button>
       </form>
