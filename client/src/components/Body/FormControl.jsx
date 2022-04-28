@@ -8,7 +8,7 @@ const FormControl = (props) => {
     <>
       <div className="formControl">
         <Search />
-        <Select category={props.category} setCategory={props.setCategory}/>
+        <Select className="select" category={props.category} setCategory={props.setCategory}/>
       </div>
     </>
   );

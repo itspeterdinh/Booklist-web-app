@@ -50,6 +50,10 @@ input[type='search']:focus {
   outline: none;
 }
 
+.search-form {
+  margin-left: 20px;
+}
+
 @media only screen and (max-width: 960px) {
   input[type='search'] {
     width: 15rem;
