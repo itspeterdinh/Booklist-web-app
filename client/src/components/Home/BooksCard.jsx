@@ -24,7 +24,7 @@ function BooksCard(props) {
   const handleShow = () => setShow(true);
 
   return (
-    <div className="card-container m-5 shadow-lg p-3 mb-5 bg-body">
+    <div className="m-5 shadow-lg p-2 mb-5 bg-body card-container">
       <div onClick={handleShow}>
         <h1>{name}</h1>
         <img
