@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import NavBar from './components/NavBar/NavBar';
-import Body from './components/Body/Body';
 import axios from 'axios';
 // eslint-disable-next-line no-unused-vars
 import bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -9,7 +8,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Cart from './components/Cart/Cart';
 import CartProvider from './components/Context/CartProvider';
-import Home from './components/Home/Home';
 import CardContainer from './components/Body/CardContainer';
 import FormControl from './components/Body/FormControl';
 
@@ -34,6 +32,7 @@ const App = () => {
   useEffect(() => {
     setIsLoading(true);
     fetchData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category]);
 
   return (

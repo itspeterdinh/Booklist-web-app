@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../Context/CartContext';
 import './Home.css';
 import { Modal } from 'react-bootstrap';
 function BooksCard(props) {
-  const { name, category, description, price, image } = props;
+  const { name, description, price, image } = props;
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setAdded] = useState(false);
   const { addToCart, setTotal } = useContext(CartContext);
@@ -23,7 +24,7 @@ function BooksCard(props) {
   const handleShow = () => setShow(true);
 
   return (
-    <div className="m-5 shadow-lg p-3 mb-5 bg-body rounded card-container">
+    <div className="card-container m-5 shadow-lg p-3 mb-5 bg-body">
       <div onClick={handleShow}>
         <h1>{name}</h1>
         <img
