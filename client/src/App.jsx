@@ -7,13 +7,14 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Cart from './components/Cart/Cart';
-import CartProvider from './components/Context/CartProvider';
+import AppProvider from './components/Context/AppProvider';
 import CardContainer from './components/Body/CardContainer';
 import FormControl from './components/Body/FormControl';
 
 const App = () => {
   const [data, setData] = useState([]);
   const [myCart, addToCart] = useState([{}]);
+  const [user, setUser] = useState();
   const [total, setTotal] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [category, setCategory] = useState('math');
@@ -30,13 +31,18 @@ const App = () => {
   };
 
   useEffect(() => {
+    let loggedInUser = window.localStorage.getItem('user');
+    setUser(JSON.parse(loggedInUser));
+  }, []);
+
+  useEffect(() => {
     setIsLoading(true);
     fetchData();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category]);
 
   return (
-    <CartProvider data={{ myCart, addToCart, total, setTotal }}>
+    <AppProvider data={{ myCart, addToCart, total, setTotal, user, setUser }}>
       <Router>
         <div className="App">
           <NavBar />
@@ -56,7 +62,7 @@ const App = () => {
           </Routes>
         </div>
       </Router>
-    </CartProvider>
+    </AppProvider>
   );
 };
 

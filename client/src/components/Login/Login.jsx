@@ -1,6 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { login, signup } from '../../apis/authAPIs';
+import { AppContext } from '../Context/AppContext';
+import { useNavigate } from 'react-router-dom';
+
 import Badges from './Badges';
 
 import "./Login.css";
@@ -10,12 +13,8 @@ function Login() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [pwd, setPwd] = useState('');
-  // const userRef = useRef();
-  // const errRef = useRef();
-
-  
-  // const [errMsg, setErrMsg] = useState('');
-  // const [success, setSuccess] = useState(false);
+  const { setUser } = useContext(AppContext);
+  const navigate = useNavigate();
 
   const signUpButton = () => {
      setIsContainerActive(prev => !prev);
@@ -26,7 +25,10 @@ function Login() {
 
   const handleLogin = async(e) => {
     e.preventDefault();
-    login(email, pwd, setEmail, setPwd);
+    const user = login(email, pwd, setEmail, setPwd, setUser);
+    if (user) {
+      navigate('/');
+    }
   }
 
   const handleSignup = async(e) => {
@@ -43,7 +45,7 @@ function Login() {
             <span>or use your account</span>
             <input 
               type="text" 
-              id="email" 
+              id="email1" 
               placeholder="you@example.com"
               autoComplete="off"
               onChange={(e) => setEmail(e.target.value)}
@@ -52,7 +54,7 @@ function Login() {
             />
             <input 
               type="password" 
-              id="password" 
+              id="password1" 
               placeholder="••••••••"
               onChange={(e) => setPwd(e.target.value)}
               value={pwd}

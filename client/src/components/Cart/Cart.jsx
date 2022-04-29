@@ -1,19 +1,18 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CartContext } from '../Context/CartContext';
+import { AppContext } from '../Context/AppContext';
 import './Cart.css';
 
 function Cart() {
-  const { myCart, total, addToCart, setTotal } = useContext(CartContext);
+  const { myCart, total, addToCart, setTotal } = useContext(AppContext);
+  const loggedInUser = window.localStorage.getItem('user');
   const navigate = useNavigate();
+
   const handleCheckout = () => {
     setTotal(0);
     addToCart([{}]);
   };
 
-  const handleHome = () => {
-    navigate('/');
-  };
   return (
     <section className="cart-container">
       <div className="cart-header">Checkout:</div>
@@ -28,10 +27,18 @@ function Cart() {
         })}
         <div className="cart-total">Total: ${total}</div>
       </div>
-      <button className="cart-checkout-btn" onClick={handleCheckout}>
-        DONE
-      </button>
-      <button className="cart-gohome-btn" onClick={handleHome}>
+      { loggedInUser ? (
+        <button className="cart-checkout-btn" onClick={handleCheckout}>
+          CHECK OUT
+        </button>
+      ) : (
+        <button className="cart-checkout-btn" onClick={() => navigate('/signup')}>
+          LOGIN TO PAY
+        </button>
+      )
+      }
+      
+      <button className="cart-gohome-btn" onClick={() => navigate('/')}>
         RETURN HOME
       </button>
     </section>

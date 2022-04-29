@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useContext, useState } from 'react';
-import { CartContext } from '../Context/CartContext';
+import { AppContext } from '../Context/AppContext';
 import './Home.css';
 import { Modal } from 'react-bootstrap';
 function BooksCard(props) {
   const { name, description, price, image } = props;
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setAdded] = useState(false);
-  const { addToCart, setTotal } = useContext(CartContext);
+  const { addToCart, setTotal } = useContext(AppContext);
   const handleclick = () => {
     setAdded(true);
     const newItems = {
