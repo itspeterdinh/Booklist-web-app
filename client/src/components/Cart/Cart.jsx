@@ -8,24 +8,43 @@ function Cart() {
   const navigate = useNavigate();
   const handleCheckout = () => {
     setTotal(0);
-    addToCart([{}]);
+    addToCart([]);
   };
 
   const handleHome = () => {
     navigate('/');
   };
+
+  const itemRemove = i => {
+    addToCart(myCart.filter((item, index) => index !== i));
+    setTotal(total - myCart[i].total_price);
+  };
   return (
     <section className="cart-container">
       <div className="cart-header">Checkout:</div>
       <div className="cart-items">
-        {myCart.slice(1).map((item, i) => {
+        {myCart.map((item, i) => {
           return (
             <div className="cart-item" key={i}>
-              <img src={item.image} alt="error" className="cart-item-img" />
-              {item.name} : ${item.price}
+              <div>
+                <img src={item.image} className="cart-item-img" />
+              </div>
+              <div className="text-items">
+                <div>{item.name} </div>
+                <div>Price: ${item.price}</div>
+                <div>Quantity: {item.quantity}</div>
+              </div>
+              <div className="delete-btn">
+                <i
+                  className="fa fa-trash"
+                  aria-hidden="true"
+                  onClick={() => itemRemove(i)}
+                ></i>
+              </div>
             </div>
           );
         })}
+
         <div className="cart-total">Total: ${total}</div>
       </div>
       <button className="cart-checkout-btn" onClick={handleCheckout}>

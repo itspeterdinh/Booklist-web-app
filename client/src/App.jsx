@@ -15,7 +15,7 @@ import FormControl from './components/Body/FormControl';
 
 const App = () => {
   const [data, setData] = useState([]);
-  const [myCart, addToCart] = useState([{}]);
+  const [myCart, addToCart] = useState([]);
   const [total, setTotal] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [category, setCategory] = useState('math');

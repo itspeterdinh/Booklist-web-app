@@ -11,11 +11,13 @@ function BooksCard(props) {
     setAdded(true);
     const newItems = {
       name: name,
-      price: price * quantity,
-      image: image
+      price: price,
+      total_price: price * quantity,
+      image: image,
+      quantity: quantity
     };
     addToCart(item => [...item, newItems]);
-    setTotal(total => (total += Number(newItems.price)));
+    setTotal(total => (total += Number(newItems.total_price)));
   };
 
   const [show, setShow] = useState(false);
