@@ -11,6 +11,7 @@ const cartRouter = require('./routes/cartRoutes');
 const AppError = require('./utils/appError');
 
 const app = express();
+app.enable('trust proxy');
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));

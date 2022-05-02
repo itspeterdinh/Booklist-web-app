@@ -44,7 +44,7 @@ function Cart() {
               </div>
             );
           })}
-          <div className="cart-total">Total: ${total}</div>
+          <div className="cart-total">Total: ${parseFloat(total).toFixed(2)}</div>
         </>
         ) : (
           <div> Your Cart is Empty </div>
