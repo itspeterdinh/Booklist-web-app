@@ -11,7 +11,7 @@ function BooksCard(props) {
   const handleclick = async () => {
     setAdded(true);
     try {
-      await axios.post(`/api/v1/cart/add/${slug}`);
+      await axios.post(`/api/v1/cart/add/${slug}?quantity=${quantity}`);
     } catch (err) {
       console.log(err);
     }

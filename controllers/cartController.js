@@ -5,6 +5,8 @@ const Item = require('../models/itemModel');
 
 exports.addToCart = catchAsync(async (req, res, next) => {
   const slug = req.params.item;
+  const { quantity } = req.query;
+
   await Item.findOne({ slug: slug }, function(err, p) {
     if (err) console.log(err);
     if (typeof req.session.cart === 'undefined') {
@@ -14,9 +16,9 @@ exports.addToCart = catchAsync(async (req, res, next) => {
       req.session.cart.push({
         slug: slug,
         name: p.name,
-        qty: 1,
+        qty: quantity,
         // price: parseFloat(p.price).toFixed(2),
-        price: p.price,
+        price: p.price * quantity,
         image: p.image
       });
     } else {
@@ -27,8 +29,8 @@ exports.addToCart = catchAsync(async (req, res, next) => {
       for (let i = 0; i < cart.length; i++) {
         if (cart[i].slug === slug) {
           // eslint-disable-next-line no-plusplus
-          cart[i].qty++;
-          cart[i].price += p.price;
+          cart[i].qty += quantity;
+          cart[i].price += p.price * quantity;
           newItem = false;
           break;
         }
@@ -37,14 +39,13 @@ exports.addToCart = catchAsync(async (req, res, next) => {
         cart.push({
           slug: slug,
           name: p.name,
-          qty: 1,
-          price: p.price,
+          qty: quantity,
+          price: p.price * quantity,
           image: p.image
         });
       }
     }
-    req.session.total += p.price;
-    console.log(req.session.cart);
+    req.session.total += p.price * quantity;
     // res.status(200).json({
     //   status: 'success',
     //   data: {
