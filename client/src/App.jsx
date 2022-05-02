@@ -13,9 +13,7 @@ import FormControl from './components/Body/FormControl';
 
 const App = () => {
   const [data, setData] = useState([]);
-  const [myCart, addToCart] = useState([{}]);
   const [user, setUser] = useState();
-  const [total, setTotal] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [category, setCategory] = useState('math');
 
@@ -42,7 +40,7 @@ const App = () => {
   }, [category]);
 
   return (
-    <AppProvider data={{ myCart, addToCart, total, setTotal, user, setUser }}>
+    <AppProvider data={{ user, setUser }}>
       <Router>
         <div className="App">
           <NavBar />

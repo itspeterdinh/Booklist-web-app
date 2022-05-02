@@ -4,13 +4,7 @@ import BooksCard from '../Home/BooksCard';
 import './CardContainer.css';
 
 const CardContainer = ({ isLoading, items }) => {
-  // console.log(items);
   return (
-    // <>
-    //   <div className="card-container">
-    //     {isLoading ? (
-    //       <div>Loading...</div>
-    //     ) : (
     <>
       <div className="cards-container">
         {isLoading ? (
@@ -23,6 +17,7 @@ const CardContainer = ({ isLoading, items }) => {
                 <div className="col-md-3 p-3" key={index}>
                   <BooksCard
                     name={book.name}
+                    slug={book.slug}
                     category={book.category}
                     description={book.description}
                     price={book.price}
@@ -36,9 +31,6 @@ const CardContainer = ({ isLoading, items }) => {
         )}
       </div>
     </>
-    //     )}
-    //   </div>
-    // </>
   );
 };
 

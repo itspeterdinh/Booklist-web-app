@@ -2,7 +2,7 @@
 import React, { useState, useContext } from 'react';
 import { login, signup } from '../../apis/authAPIs';
 import { AppContext } from '../Context/AppContext';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 import Badges from './Badges';
 
@@ -14,7 +14,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [pwd, setPwd] = useState('');
   const { setUser } = useContext(AppContext);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const signUpButton = () => {
      setIsContainerActive(prev => !prev);
@@ -26,9 +26,7 @@ function Login() {
   const handleLogin = async(e) => {
     e.preventDefault();
     const user = login(email, pwd, setEmail, setPwd, setUser);
-    if (user) {
-      navigate('/');
-    }
+    console.log(user);
   }
 
   const handleSignup = async(e) => {

@@ -1,22 +1,20 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useContext, useState } from 'react';
-import { AppContext } from '../Context/AppContext';
+import React, { useState } from 'react';
 import './Home.css';
 import { Modal } from 'react-bootstrap';
+import axios from 'axios';
+
 function BooksCard(props) {
-  const { name, description, price, image } = props;
+  const { name, slug, description, price, image } = props;
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setAdded] = useState(false);
-  const { addToCart, setTotal } = useContext(AppContext);
-  const handleclick = () => {
+  const handleclick = async () => {
     setAdded(true);
-    const newItems = {
-      name: name,
-      price: price * quantity,
-      image: image
-    };
-    addToCart(item => [...item, newItems]);
-    setTotal(total => (total += Number(newItems.price)));
+    try {
+      await axios.post(`/api/v1/cart/add/${slug}`);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const [show, setShow] = useState(false);

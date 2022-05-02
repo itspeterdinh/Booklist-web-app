@@ -17,7 +17,6 @@ export const login = async (email, password, setEmail, setPwd, setUser) => {
       console.log(res.data);
       window.localStorage.setItem('user', JSON.stringify(res.data.data.user));
       setUser(res.data.data.user);
-      return res.data.data.user;
     }
   } catch (err) {
     console.log(err);

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 //import React, { Component } from "react";
 import React, { useEffect, useContext } from 'react';
@@ -7,15 +8,14 @@ import { Link } from 'react-router-dom';
 import { logout } from '../../apis/authAPIs';
 import './NavBar.css';
 import { AppContext } from '../Context/AppContext';
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
   const { user } = useContext(AppContext);
-  // const [user, setUser] = useState();
+  const navigate = useNavigate();
+
   useEffect(() => {
-    // const loggedInUser = window.localStorage.getItem('user');
-    // if (loggedInUser) {
-    //   setUser(JSON.parse(loggedInUser));
-    // }
+    navigate('/');
   }, [user]);
 
   const handleLogout = () => {

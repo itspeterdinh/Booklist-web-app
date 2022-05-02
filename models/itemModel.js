@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-// const slugify = require('slugify');
+const slugify = require('slugify');
 
 // const itemSchema = new mongoose.Schema({
 //   name: {
@@ -54,6 +54,7 @@ const itemSchema = new mongoose.Schema(
       maxlength: 30,
       minlength: 10
     },
+    slug: String,
     price: Number,
     category: {
       type: String,
@@ -62,7 +63,7 @@ const itemSchema = new mongoose.Schema(
         values: ['math', 'physics', 'chemistry']
       }
     },
-    images: {
+    image: {
       type: String,
       require: true
     },
@@ -76,10 +77,10 @@ const itemSchema = new mongoose.Schema(
   }
 );
 
-// itemSchema.pre('save', function(next) {
-//   this.slug = slugify(this.name, { lower: true });
-//   next();
-// });
+itemSchema.pre('save', function(next) {
+  this.slug = slugify(this.name, { lower: true });
+  next();
+});
 
 const Item = mongoose.model('Item', itemSchema);
 
