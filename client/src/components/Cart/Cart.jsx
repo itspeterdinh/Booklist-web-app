@@ -20,7 +20,6 @@ function Cart() {
       console.log(err);
     }
   };
-  console.log(cart);
   
 
   useEffect(() => {
