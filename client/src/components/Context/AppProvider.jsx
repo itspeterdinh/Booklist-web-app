@@ -1,7 +1,7 @@
 import React from 'react'
-import { CartContext } from './CartContext'
-function CartProvider(props) {
-    let Provider = CartContext.Provider
+import { AppContext } from './AppContext'
+function AppProvider(props) {
+    let Provider = AppContext.Provider
     let children = props.children
   return (
     <Provider value={props.data}>
@@ -10,4 +10,4 @@ function CartProvider(props) {
   )
 }
 
-export default CartProvider
+export default AppProvider;

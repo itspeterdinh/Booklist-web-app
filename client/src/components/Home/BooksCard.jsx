@@ -1,23 +1,20 @@
-import React, { useContext, useState } from 'react';
-import { CartContext } from '../Context/CartContext';
+/* eslint-disable jsx-a11y/alt-text */
+import React, { useState } from 'react';
 import './Home.css';
 import { Modal } from 'react-bootstrap';
+import axios from 'axios';
+
 function BooksCard(props) {
-  const { name, category, description, price, image } = props;
+  const { name, slug, description, price, image } = props;
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setAdded] = useState(false);
-  const { addToCart, setTotal } = useContext(CartContext);
-  const handleclick = () => {
+  const handleclick = async () => {
     setAdded(true);
-    const newItems = {
-      name: name,
-      price: price,
-      total_price: price * quantity,
-      image: image,
-      quantity: quantity
-    };
-    addToCart(item => [...item, newItems]);
-    setTotal(total => (total += Number(newItems.total_price)));
+    try {
+      await axios.post(`/api/v1/cart/add/${slug}?quantity=${quantity}`);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const [show, setShow] = useState(false);
@@ -25,7 +22,7 @@ function BooksCard(props) {
   const handleShow = () => setShow(true);
 
   return (
-    <div className="m-5 shadow-lg p-3 mb-5 bg-body rounded card-container">
+    <div className="m-5 shadow-lg p-2 mb-5 bg-body card-container">
       <div onClick={handleShow}>
         <h1>{name}</h1>
         <img

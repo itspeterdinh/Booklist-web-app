@@ -1,218 +1,271 @@
-[
-  {
-    "_id": {
-      "$oid": "621f34d6c238400b88f5b52a"
-    },
-    "locations": {
-      "type": "Point",
-      "coordinates": []
-    },
-    "createAt": {
-      "$date": "2022-03-02T09:11:32.270Z"
-    },
-    "name": "Calculus 1",
-    "author": "James Stewart",
-    "type": "Paperback",
-    "category": "selling",
-    "slug": "calculus-1",
-    "__v": 0
+[{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d009"
   },
-  {
-    "_id": {
-      "$oid": "621f34e6c238400b88f5b52b"
-    },
-    "locations": {
-      "type": "Point",
-      "coordinates": []
-    },
-    "createAt": {
-      "$date": "2022-03-02T09:11:32.270Z"
-    },
-    "name": "Experimental Design",
-    "author": "Roger Kirk",
-    "type": "Hardcover",
-    "category": "selling",
-    "slug": "experimental-design",
-    "__v": 0
+  "name": "Math 1",
+  "price": 20,
+  "category": "math",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/81OrIk+OffL.jpg",
+  "description": "This is Math 1 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d00a"
   },
-  {
-    "_id": {
-      "$oid": "621f34f1c238400b88f5b52c"
-    },
-    "locations": {
-      "type": "Point",
-      "coordinates": []
-    },
-    "createAt": {
-      "$date": "2022-03-02T09:11:32.270Z"
-    },
-    "name": "Econometric Analysis",
-    "author": "William Greene",
-    "type": "Hardcover",
-    "category": "renting",
-    "slug": "econometric-analysis",
-    "__v": 0
+  "name": "Math 2",
+  "price": 40,
+  "category": "math",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/81OrIk+OffL.jpg",
+  "description": "This is Math 2 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d00b"
   },
-  {
-    "_id": {
-      "$oid": "621f3501c238400b88f5b52d"
-    },
-    "locations": {
-      "type": "Point",
-      "coordinates": []
-    },
-    "createAt": {
-      "$date": "2022-03-02T09:11:32.270Z"
-    },
-    "name": "Modeling Longitudinal Data",
-    "author": "Robert Weiss",
-    "type": "Paperback",
-    "category": "selling",
-    "slug": "modeling-longitudinal-data",
-    "__v": 0
+  "name": "Math 3",
+  "price": 60,
+  "category": "math",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/81OrIk+OffL.jpg",
+  "description": "This is Math 3 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d00c"
   },
-  {
-    "_id": {
-      "$oid": "621f3518c238400b88f5b52f"
-    },
-    "locations": {
-      "type": "Point",
-      "coordinates": []
-    },
-    "createAt": {
-      "$date": "2022-03-02T09:11:32.270Z"
-    },
-    "name": "Regression Analysis by Example",
-    "author": "Samprit Chatterjee",
-    "type": "Loose-leaf",
-    "category": "selling",
-    "slug": "regression-analysis-by-example",
-    "__v": 0
+  "name": "Math 4",
+  "price": 80,
+  "category": "math",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/81OrIk+OffL.jpg",
+  "description": "This is Math 4 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d00d"
   },
-  {
-    "_id": {
-      "$oid": "621f3524c238400b88f5b530"
-    },
-    "locations": {
-      "type": "Point",
-      "coordinates": []
-    },
-    "createAt": {
-      "$date": "2022-03-02T09:11:32.270Z"
-    },
-    "name": "Sampling: Design and Analysis",
-    "author": "Sharon L. Lohr",
-    "type": "Hardcover",
-    "category": "selling",
-    "slug": "sampling:-design-and-analysis",
-    "__v": 0
+  "name": "Math 5",
+  "price": 100,
+  "category": "math",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/81OrIk+OffL.jpg",
+  "description": "This is Math 5 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d00e"
   },
-  {
-    "_id": {
-      "$oid": "621f352ec238400b88f5b531"
-    },
-    "locations": {
-      "type": "Point",
-      "coordinates": []
-    },
-    "createAt": {
-      "$date": "2022-03-02T09:11:32.270Z"
-    },
-    "name": "Latent Class Scaling Analysis",
-    "author": "C. Mitchell Dayton",
-    "type": "Loose-leaf",
-    "category": "selling",
-    "slug": "latent-class-scaling-analysis",
-    "__v": 0
+  "name": "Math 6",
+  "price": 120,
+  "category": "math",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/81OrIk+OffL.jpg",
+  "description": "This is Math 6 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d00f"
   },
-  {
-    "_id": {
-      "$oid": "621f3534c238400b88f5b532"
-    },
-    "locations": {
-      "type": "Point",
-      "coordinates": []
-    },
-    "createAt": {
-      "$date": "2022-03-02T09:11:32.270Z"
-    },
-    "name": "Applied Latent Class Analysis",
-    "author": "Allan L. McCutcheon",
-    "type": "Paperback",
-    "category": "exchange",
-    "slug": "applied-latent-class-analysis",
-    "__v": 0
+  "name": "Math 7",
+  "price": 140,
+  "category": "math",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/81OrIk+OffL.jpg",
+  "description": "This is Math 7 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d010"
   },
-  {
-    "_id": {
-      "$oid": "621f353ac238400b88f5b533"
-    },
-    "locations": {
-      "type": "Point",
-      "coordinates": []
-    },
-    "createAt": {
-      "$date": "2022-03-02T09:11:32.270Z"
-    },
-    "name": "Latent Class Analysis",
-    "author": "Allan L. McCutcheon",
-    "type": "Loose-leaf",
-    "category": "selling",
-    "slug": "latent-class-analysis",
-    "__v": 0
+  "name": "Math 8",
+  "price": 160,
+  "category": "math",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/81OrIk+OffL.jpg",
+  "description": "This is Math 8 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d011"
   },
-  {
-    "_id": {
-      "$oid": "621f3600c238400b88f5b534"
-    },
-    "locations": {
-      "type": "Point",
-      "coordinates": []
-    },
-    "createAt": {
-      "$date": "2022-03-02T09:11:32.270Z"
-    },
-    "name": "Northanger Abbey",
-    "author": "Jane Austen",
-    "type": "Hardcover",
-    "category": "renting",
-    "slug": "northanger-abbey",
-    "__v": 0
+  "name": "Math 9",
+  "price": 180,
+  "category": "math",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/81OrIk+OffL.jpg",
+  "description": "This is Math 9 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d012"
   },
-  {
-    "_id": {
-      "$oid": "621f3607c238400b88f5b535"
-    },
-    "locations": {
-      "type": "Point",
-      "coordinates": []
-    },
-    "createAt": {
-      "$date": "2022-03-02T09:11:32.270Z"
-    },
-    "name": "War and Peace",
-    "author": "Leo Tolstoy",
-    "type": "Hardcover",
-    "category": "exchange",
-    "slug": "war-and-peace",
-    "__v": 0
+  "name": "Math 10",
+  "price": 200,
+  "category": "math",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/81OrIk+OffL.jpg",
+  "description": "This is Math 10 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d013"
   },
-  {
-    "_id": {
-      "$oid": "621f3633c238400b88f5b537"
-    },
-    "locations": {
-      "type": "Point",
-      "coordinates": []
-    },
-    "createAt": {
-      "$date": "2022-03-02T09:11:32.270Z"
-    },
-    "name": "Anna Karenina",
-    "author": "Leo Tolstoy",
-    "type": "Hardcover",
-    "category": "renting",
-    "slug": "anna-karenina",
-    "__v": 0
-  }
-]
+  "name": "Physics 1",
+  "price": 20,
+  "category": "physics",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/41bQWCP52nL.jpg",
+  "description": "This is Physics 1 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d014"
+  },
+  "name": "Physics 2",
+  "price": 40,
+  "category": "physics",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/41bQWCP52nL.jpg",
+  "description": "This is Physics 2 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d015"
+  },
+  "name": "Physics 3",
+  "price": 60,
+  "category": "physics",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/41bQWCP52nL.jpg",
+  "description": "This is Physics 3 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d016"
+  },
+  "name": "Physics 4",
+  "price": 80,
+  "category": "physics",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/41bQWCP52nL.jpg",
+  "description": "This is Physics 4 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d017"
+  },
+  "name": "Physics 5",
+  "price": 100,
+  "category": "physics",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/41bQWCP52nL.jpg",
+  "description": "This is Physics 5 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d018"
+  },
+  "name": "Physics 6",
+  "price": 120,
+  "category": "physics",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/41bQWCP52nL.jpg",
+  "description": "This is Physics 6 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d019"
+  },
+  "name": "Physics 7",
+  "price": 140,
+  "category": "physics",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/41bQWCP52nL.jpg",
+  "description": "This is Physics 7 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d01a"
+  },
+  "name": "Physics 8",
+  "price": 160,
+  "category": "physics",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/41bQWCP52nL.jpg",
+  "description": "This is Physics 8 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d01b"
+  },
+  "name": "Physics 9",
+  "price": 180,
+  "category": "physics",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/41bQWCP52nL.jpg",
+  "description": "This is Physics 9 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d01c"
+  },
+  "name": "Physics 10",
+  "price": 200,
+  "category": "physics",
+  "image": "https://images-na.ssl-images-amazon.com/images/I/41bQWCP52nL.jpg",
+  "description": "This is Physics 10 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d01d"
+  },
+  "name": "Chemistry 1",
+  "price": 20,
+  "category": "chemistry",
+  "image": "https://chemistryhall.com/wp-content/uploads/2019/08/chemgen.jpg",
+  "description": "This is Chemistry 1 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d01e"
+  },
+  "name": "Chemistry 2",
+  "price": 40,
+  "category": "chemistry",
+  "image": "https://chemistryhall.com/wp-content/uploads/2019/08/chemgen.jpg",
+  "description": "This is Chemistry 2 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d01f"
+  },
+  "name": "Chemistry 3",
+  "price": 60,
+  "category": "chemistry",
+  "image": "https://chemistryhall.com/wp-content/uploads/2019/08/chemgen.jpg",
+  "description": "This is Chemistry 3 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d020"
+  },
+  "name": "Chemistry 4",
+  "price": 80,
+  "category": "chemistry",
+  "image": "https://chemistryhall.com/wp-content/uploads/2019/08/chemgen.jpg",
+  "description": "This is Chemistry 4 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d021"
+  },
+  "name": "Chemistry 5",
+  "price": 100,
+  "category": "chemistry",
+  "image": "https://chemistryhall.com/wp-content/uploads/2019/08/chemgen.jpg",
+  "description": "This is Chemistry 5 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d022"
+  },
+  "name": "Chemistry 6",
+  "price": 120,
+  "category": "chemistry",
+  "image": "https://chemistryhall.com/wp-content/uploads/2019/08/chemgen.jpg",
+  "description": "This is Chemistry 6 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d023"
+  },
+  "name": "Chemistry 7",
+  "price": 140,
+  "category": "chemistry",
+  "image": "https://chemistryhall.com/wp-content/uploads/2019/08/chemgen.jpg",
+  "description": "This is Chemistry 7 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d024"
+  },
+  "name": "Chemistry 8",
+  "price": 160,
+  "category": "chemistry",
+  "image": "https://chemistryhall.com/wp-content/uploads/2019/08/chemgen.jpg",
+  "description": "This is Chemistry 8 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d025"
+  },
+  "name": "Chemistry 9",
+  "price": 180,
+  "category": "chemistry",
+  "image": "https://chemistryhall.com/wp-content/uploads/2019/08/chemgen.jpg",
+  "description": "This is Chemistry 9 description"
+},{
+  "_id": {
+    "$oid": "62455d741b75edfa21f3d026"
+  },
+  "name": "Chemistry 10",
+  "price": 200,
+  "category": "chemistry",
+  "image": "https://chemistryhall.com/wp-content/uploads/2019/08/chemgen.jpg",
+  "description": "This is Chemistry 10 description"
+}]

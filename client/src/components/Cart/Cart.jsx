@@ -1,56 +1,68 @@
-import { useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CartContext } from '../Context/CartContext';
+// import { AppContext } from '../Context/AppContext';
+import axios from 'axios';
 import './Cart.css';
 
 function Cart() {
-  const { myCart, total, addToCart, setTotal } = useContext(CartContext);
+  const [total, setTotal] = useState(0);
+  const [cart, setCart] = useState([]);
+  const loggedInUser = window.localStorage.getItem('user');
   const navigate = useNavigate();
+
+  const fetchCart = async () => {
+    try {
+      await axios.get("/api/v1/cart/get").then(res => {
+        setCart(res.data.data.data);
+        setTotal(res.data.data.total);
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchCart();
+  }, []);
+
   const handleCheckout = () => {
     setTotal(0);
-    addToCart([]);
+    setCart([{}]);
   };
 
-  const handleHome = () => {
-    navigate('/');
-  };
-
-  const itemRemove = i => {
-    addToCart(myCart.filter((item, index) => index !== i));
-    setTotal(total - myCart[i].total_price);
-  };
   return (
     <section className="cart-container">
       <div className="cart-header">Checkout:</div>
       <div className="cart-items">
-        {myCart.map((item, i) => {
-          return (
-            <div className="cart-item" key={i}>
-              <div>
-                <img src={item.image} className="cart-item-img" />
+        {cart ? (
+        <>
+          {cart.map((item, i) => {
+            return (
+              <div className="cart-item" key={i}>
+                <img src={item.image} alt="error" className="cart-item-img" />
+                {item.name} : ${item.price}
               </div>
-              <div className="text-items">
-                <div>{item.name} </div>
-                <div>Price: ${item.price}</div>
-                <div>Quantity: {item.quantity}</div>
-              </div>
-              <div className="delete-btn">
-                <i
-                  className="fa fa-trash"
-                  aria-hidden="true"
-                  onClick={() => itemRemove(i)}
-                ></i>
-              </div>
-            </div>
-          );
-        })}
-
-        <div className="cart-total">Total: ${total}</div>
+            );
+          })}
+          <div className="cart-total">Total: ${total}</div>
+        </>
+        ) : (
+          <div> Your Cart is Empty </div>
+        )
+        }
       </div>
-      <button className="cart-checkout-btn" onClick={handleCheckout}>
-        DONE
-      </button>
-      <button className="cart-gohome-btn" onClick={handleHome}>
+      { loggedInUser ? (
+        <button className="cart-checkout-btn" onClick={handleCheckout}>
+          CHECK OUT
+        </button>
+      ) : (
+        <button className="cart-checkout-btn" onClick={() => navigate('/signup')}>
+          LOGIN TO PAY
+        </button>
+      )
+      }
+      
+      <button className="cart-gohome-btn" onClick={() => navigate('/')}>
         RETURN HOME
       </button>
     </section>

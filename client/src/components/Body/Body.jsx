@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import FormControl from './FormControl';
 import CardContainer from './CardContainer';
-import Cart from '../Cart/Cart';
 import CartProvider from '../Context/CartProvider';
 
 import './Body.css';
