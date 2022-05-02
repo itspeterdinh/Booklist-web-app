@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from 'react';
+// import { AppContext } from '../Context/AppContext';
 import './Home.css';
 import { Modal } from 'react-bootstrap';
 import axios from 'axios';
@@ -8,13 +9,14 @@ function BooksCard(props) {
   const { name, slug, description, price, image } = props;
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setAdded] = useState(false);
+ 
   const handleclick = async () => {
-    setAdded(true);
     try {
       await axios.post(`/api/v1/cart/add/${slug}?quantity=${quantity}`);
     } catch (err) {
       console.log(err);
     }
+    setAdded(true);
   };
 
   const [show, setShow] = useState(false);

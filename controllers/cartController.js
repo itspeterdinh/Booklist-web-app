@@ -1,3 +1,5 @@
+/* eslint-disable prefer-destructuring */
+/* eslint-disable no-plusplus */
 const catchAsync = require('../utils/catchAsync');
 // const AppError = require('../utils/appError');
 const Item = require('../models/itemModel');
@@ -18,19 +20,15 @@ exports.addToCart = catchAsync(async (req, res, next) => {
         name: p.name,
         qty: Number(quantity),
         // price: parseFloat(p.price).toFixed(2),
-        price: p.price * quantity,
+        price: p.price,
         image: p.image
       });
     } else {
-      // eslint-disable-next-line prefer-destructuring
       const cart = req.session.cart;
       let newItem = true;
-      // eslint-disable-next-line no-plusplus
       for (let i = 0; i < cart.length; i++) {
         if (cart[i].slug === slug) {
-          // eslint-disable-next-line no-plusplus
           cart[i].qty += Number(quantity);
-          cart[i].price += p.price * quantity;
           newItem = false;
           break;
         }
@@ -40,7 +38,7 @@ exports.addToCart = catchAsync(async (req, res, next) => {
           slug: slug,
           name: p.name,
           qty: Number(quantity),
-          price: p.price * quantity,
+          price: p.price,
           image: p.image
         });
       }
@@ -70,18 +68,46 @@ exports.getCart = (req, res, next) => {
   });
 };
 
-// exports.updateCart = (req, res, next) => {
-//   const slug = req.params.item;
-//   const cart = req.session.cart;
-//   const action = req.query.action;
+exports.updateCart = (req, res, next) => {
+  const slug = req.params.item;
+  const cart = req.session.cart;
+  const action = req.query.action;
 
-//   for (let i = 0; i < cart.length; i++) {
-//     if (cart[i].slug === slug) {
-//       switch (action) {
-//         case "add":
-//           cart[i].qty ++;
-//         case ""
-//       }
-//     }
-//   }
-// }
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].slug === slug) {
+      switch (action) {
+        case 'add':
+          cart[i].qty++;
+          req.session.total += cart[i].price;
+          break;
+        case 'remove':
+          cart[i].qty--;
+          req.session.total -= cart[i].price;
+          if (cart[i].qty < 1) cart.splice(i, 1);
+          if (cart.length === 0) {
+            delete req.session.cart;
+            delete req.session.total;
+          }
+          break;
+        case 'clear':
+          req.session.total -= cart[i].price * cart[i].qty;
+          cart.splice(i, 1);
+          if (cart.length === 0) {
+            delete req.session.cart;
+            delete req.session.total;
+          }
+          break;
+        default:
+          console.log('update problem');
+          break;
+      }
+    }
+  }
+  res.status(200).json({
+    status: 'success',
+    data: {
+      data: req.session.cart,
+      total: req.session.total
+    }
+  });
+};

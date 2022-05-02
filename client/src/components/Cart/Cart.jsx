@@ -21,6 +21,17 @@ function Cart() {
     }
   };
 
+  const updateCart = async (item,action) => {
+    try {
+      await axios.get(`/api/v1/cart/update/${item}?action=${action}`).then(res => {
+        setCart(res.data.data.data);
+        setTotal(res.data.data.total);
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     fetchCart();
   }, []);
@@ -39,9 +50,23 @@ function Cart() {
           {cart.map((item, i) => {
             return (
               <div className="cart-item" key={i}>
-                <img src={item.image} alt="error" className="cart-item-img" />
-                {item.name} : ${item.price}
-              </div>
+                  <img src={item.image} alt="error" className="cart-item-img" />
+                  <div className="text-items">
+                    <div>{item.name} </div>
+                    <div>Price: ${item.price}</div>
+                    <div>Quantity:
+                      <span><i className="fa-solid fa-plus plus-icon" onClick={() => updateCart(item.slug, "add")}></i></span>
+                       {item.qty}
+                       <span><i className="fa fa-minus minus-icon" onClick={() => updateCart(item.slug, "remove")}></i></span></div>
+                  </div>
+                  <div className="delete-btn">
+                    <i
+                      className="fa fa-trash"
+                      aria-hidden="true"
+                      onClick={() => updateCart(item.slug, "clear")}
+                    ></i>
+                  </div>
+                </div>
             );
           })}
           <div className="cart-total">Total: ${parseFloat(total).toFixed(2)}</div>
@@ -61,7 +86,6 @@ function Cart() {
         </button>
       )
       }
-      
       <button className="cart-gohome-btn" onClick={() => navigate('/')}>
         RETURN HOME
       </button>
