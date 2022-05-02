@@ -1,25 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { AppContext } from '../Context/AppContext';
+import { AppContext } from '../Context/AppContext';
 import axios from 'axios';
 import './Cart.css';
 
 function Cart() {
-  const [total, setTotal] = useState(0);
-  const [cart, setCart] = useState([]);
   const loggedInUser = window.localStorage.getItem('user');
   const navigate = useNavigate();
-
-  const fetchCart = async () => {
-    try {
-      await axios.get("/api/v1/cart/get").then(res => {
-        setCart(res.data.data.data);
-        setTotal(res.data.data.total);
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const {cart, setCart, total, setTotal} = useContext(AppContext);
 
   const updateCart = async (item,action) => {
     try {
@@ -32,9 +20,9 @@ function Cart() {
     }
   };
 
-  useEffect(() => {
-    fetchCart();
-  }, []);
+  // useEffect(() => {
+  //   fetchCart();
+  // }, []);
 
   const handleCheckout = () => {
     setTotal(0);
@@ -57,7 +45,9 @@ function Cart() {
                     <div>Quantity:
                       <span><i className="fa-solid fa-plus plus-icon" onClick={() => updateCart(item.slug, "add")}></i></span>
                        {item.qty}
-                       <span><i className="fa fa-minus minus-icon" onClick={() => updateCart(item.slug, "remove")}></i></span></div>
+                      <span><i className="fa fa-minus minus-icon" onClick={() => updateCart(item.slug, "remove")}></i></span>
+                    </div>
+                    <div>Sub total: {parseFloat(item.price * item.qty).toFixed(2)}</div>
                   </div>
                   <div className="delete-btn">
                     <i

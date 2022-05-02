@@ -19,7 +19,6 @@ exports.addToCart = catchAsync(async (req, res, next) => {
         slug: slug,
         name: p.name,
         qty: Number(quantity),
-        // price: parseFloat(p.price).toFixed(2),
         price: p.price,
         image: p.image
       });
@@ -44,16 +43,16 @@ exports.addToCart = catchAsync(async (req, res, next) => {
       }
     }
     req.session.total += p.price * quantity;
-    console.log(req.session.cart);
-    // res.status(200).json({
-    //   status: 'success',
-    //   data: {
-    //     data: req.session.cart
-    //   }
-    // });
     res.status(200).json({
-      status: 'success'
+      status: 'success',
+      data: {
+        data: req.session.cart,
+        total: req.session.total
+      }
     });
+    // res.status(200).json({
+    //   status: 'success'
+    // });
     // res.redirect('back');
   });
 });

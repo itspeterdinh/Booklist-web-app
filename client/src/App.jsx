@@ -16,6 +16,8 @@ const App = () => {
   const [user, setUser] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [category, setCategory] = useState('math');
+  const [total, setTotal] = useState(0);
+  const [cart, setCart] = useState([]);
 
   const fetchData = async () => {
     try {
@@ -28,7 +30,19 @@ const App = () => {
     }
   };
 
+  const fetchCart = async () => {
+    try {
+      await axios.get("/api/v1/cart/get").then(res => {
+        setCart(res.data.data.data);
+        setTotal(res.data.data.total);
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
+    fetchCart();
     let loggedInUser = window.localStorage.getItem('user');
     setUser(JSON.parse(loggedInUser));
   }, []);
@@ -40,7 +54,7 @@ const App = () => {
   }, [category]);
 
   return (
-    <AppProvider data={{ user, setUser }}>
+    <AppProvider data={{ user, setUser, total, setTotal, cart, setCart }}>
       <Router>
         <div className="App">
           <NavBar />

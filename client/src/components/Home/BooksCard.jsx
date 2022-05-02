@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState } from 'react';
-// import { AppContext } from '../Context/AppContext';
+import React, { useState, useContext } from 'react';
+import { AppContext } from '../Context/AppContext';
 import './Home.css';
 import { Modal } from 'react-bootstrap';
 import axios from 'axios';
@@ -9,10 +9,14 @@ function BooksCard(props) {
   const { name, slug, description, price, image } = props;
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setAdded] = useState(false);
+  const {setCart, setTotal} = useContext(AppContext);
  
   const handleclick = async () => {
     try {
-      await axios.post(`/api/v1/cart/add/${slug}?quantity=${quantity}`);
+      await axios.post(`/api/v1/cart/add/${slug}?quantity=${quantity}`).then(res => {
+        setCart(res.data.data.data);
+        setTotal(res.data.data.total);
+      });
     } catch (err) {
       console.log(err);
     }
